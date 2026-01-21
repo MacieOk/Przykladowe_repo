@@ -25,10 +25,10 @@ jobs:
       - name: Uruchomienie testów 
         run: pytest
 
-deploy:
-  needs: test-and-lint
-  if: github.ref == 'refs/heads/main'
-  runs-on: ubuntu-latest
-  steps:
-    - name: Symulacja wdrożenia
-      run: echo "Wdrożenie aplikacji powiodło się"
+  deploy:
+    needs: test-and-lint
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Symulacja wdrożenia
+        run: echo "Wdrożenie aplikacji powiodło się"
